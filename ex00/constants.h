@@ -8,5 +8,6 @@
 # define TRUE 1
 # define FALSE 0
 # define INDEX_NOT_FOUND -1
+# define UNDEFINED '|'
 
 #endif //CONSTANTS_H

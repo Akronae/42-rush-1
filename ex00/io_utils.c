@@ -10,6 +10,7 @@
 #endif
 #include "io_utils.h"
 #include "string_utils.h"
+#include "constants.h"
 
 void	putstr(char *str)
 {
@@ -47,10 +48,10 @@ void	putarraystr(char **arr)
 
 	putstr("[");
 	i = -1;
-	while (arr[++i])
+	while (arr[++i] != UNDEFINED)
 	{
 		putstr(arr[i]);
-		if (arr[i + 1])
+		if (arr[i + 1] != UNDEFINED)
 			putstr(", ");
 	}
 	putstr("]");

@@ -10,5 +10,6 @@ void	putchar(char c);
 void	putnbr(int nbr);
 void	nl(void);
 void	putarraystr(char **arr);
+void	putarray_2_int(int **arr);
 
 #endif //IO_UTILS_H
