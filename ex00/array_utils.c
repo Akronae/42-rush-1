@@ -8,7 +8,7 @@
 void	*new_array(int element_size, int element_count)
 {
 	void	**addr;
-	int i;
+	int		i;
 
 	addr = malloc(element_size * element_count + sizeof(NULL));
 	i = -1;
@@ -19,7 +19,32 @@ void	*new_array(int element_size, int element_count)
 	return (addr);
 }
 
+void	**new_array_2(int element_size, int dim_1_size, int dim_2_size)
+{
+	void	***addr;
+	int		i;
+
+	addr = new_array(sizeof(int), dim_1_size);
+	i = -1;
+	while (++i <= dim_1_size)
+	{
+		addr[i] = new_array(element_size, dim_2_size);
+	}
+	addr[++i] = NULL;
+	return (addr);
+}
+
 void	*new_array_int(int element_count)
 {
 	return (new_array(sizeof(int), element_count));
+}
+
+int	get_array_size(void **arr)
+{
+	int	i;
+
+	i = -1;
+	while (arr[++i] != NULL)
+		;
+	return (i);
 }
